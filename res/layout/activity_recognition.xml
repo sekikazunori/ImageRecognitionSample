@@ -50,8 +50,8 @@
                     android:id="@+id/edit_path"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:text="/sdcard/testdata/book.png" >
+                    android:ems="15"
+                    android:text="" >
 
                     <requestFocus />
                 </EditText>
@@ -71,10 +71,10 @@
                     android:id="@+id/button_exec"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="画像認識要求実行" />
+                    android:text="画像の選択" />
             </TableRow>
 
-            <TableRow
+<!--             <TableRow
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
@@ -89,7 +89,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ＦＢ（個別）画面へ" />
-            </TableRow>
+            </TableRow> -->
 
         </TableLayout>
         <TextView

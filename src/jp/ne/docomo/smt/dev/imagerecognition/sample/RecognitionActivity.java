@@ -188,8 +188,8 @@ public class RecognitionActivity extends Activity implements OnClickListener {
 						InputMethodManager.HIDE_NOT_ALWAYS);
 
 				_resultData = resultData;
-				feedbackBtn.setEnabled(true);
-				candidateBtn.setEnabled(true);
+//				feedbackBtn.setEnabled(true);
+//				candidateBtn.setEnabled(true);
 			}
 		}
 
@@ -308,12 +308,12 @@ public class RecognitionActivity extends Activity implements OnClickListener {
 		// ボタンイベントの設定
 		Button btn = (Button) findViewById(R.id.button_exec);
 		btn.setOnClickListener(this);
-		feedbackBtn = (Button) findViewById(R.id.button_feedback);
-		feedbackBtn.setOnClickListener(this);
-		feedbackBtn.setEnabled(false);
-		candidateBtn = (Button) findViewById(R.id.button_candidate);
-		candidateBtn.setOnClickListener(this);
-		candidateBtn.setEnabled(false);
+//		feedbackBtn = (Button) findViewById(R.id.button_feedback);
+//		feedbackBtn.setOnClickListener(this);
+//		feedbackBtn.setEnabled(false);
+//		candidateBtn = (Button) findViewById(R.id.button_candidate);
+//		candidateBtn.setOnClickListener(this);
+//		candidateBtn.setEnabled(false);
 
 		// API キーの登録
 		AuthApiKey.initializeAuth(APIKEY);
@@ -334,29 +334,29 @@ public class RecognitionActivity extends Activity implements OnClickListener {
 		case R.id.button_exec:
 			pushExecButton();
 			break;
-		case R.id.button_feedback:
-			intent = new Intent(this, FeedbackActivity.class);
-			intent.putExtra(INTENT_RECOGNITIONID_KEY,
-					this._resultData.getRecognitionId());
-			startActivity(intent);
-			break;
-		case R.id.button_candidate:
-			intent = new Intent(this, FeedbackToCandidateActivity.class);
-			intent.putExtra(INTENT_RECOGNITIONID_KEY,
-					this._resultData.getRecognitionId());
-
-			// itemId は先頭のデータを対象とする
-			String itemid = "";
-			List<ImageRecognitionCandidateData> candidateList = this._resultData
-					.getCandidateDataList();
-			if (candidateList != null && candidateList.size() > 0) {
-				ImageRecognitionCandidateData candidateData = (ImageRecognitionCandidateData) candidateList
-						.get(0);
-				itemid = candidateData.getItemId();
-			}
-			intent.putExtra(INTENT_ITEMID_KEY, itemid);
-			startActivity(intent);
-			break;
+//		case R.id.button_feedback:
+//			intent = new Intent(this, FeedbackActivity.class);
+//			intent.putExtra(INTENT_RECOGNITIONID_KEY,
+//					this._resultData.getRecognitionId());
+//			startActivity(intent);
+//			break;
+//		case R.id.button_candidate:
+//			intent = new Intent(this, FeedbackToCandidateActivity.class);
+//			intent.putExtra(INTENT_RECOGNITIONID_KEY,
+//					this._resultData.getRecognitionId());
+//
+//			// itemId は先頭のデータを対象とする
+//			String itemid = "";
+//			List<ImageRecognitionCandidateData> candidateList = this._resultData
+//					.getCandidateDataList();
+//			if (candidateList != null && candidateList.size() > 0) {
+//				ImageRecognitionCandidateData candidateData = (ImageRecognitionCandidateData) candidateList
+//						.get(0);
+//				itemid = candidateData.getItemId();
+//			}
+//			intent.putExtra(INTENT_ITEMID_KEY, itemid);
+//			startActivity(intent);
+//			break;
 		}
 	}
 
