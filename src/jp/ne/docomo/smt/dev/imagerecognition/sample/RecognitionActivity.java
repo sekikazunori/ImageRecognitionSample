@@ -329,7 +329,7 @@ public class RecognitionActivity extends Activity implements OnClickListener {
 
 	// インターフェース実装
 	public void onClick(View v) {
-		Intent intent = null;
+//		Intent intent = null;
 		switch (v.getId()) {
 		case R.id.button_exec:
 			pushExecButton();

@@ -33,12 +33,12 @@ public class FeedbackActivity extends Activity implements OnClickListener  {
 		
 		private boolean isSdkException = false;
 		private String exceptionMessage = null;
-	 
-	    public FeedbackAsyncTask(AlertDialog.Builder dlg) {
-	        super();
-	        _dlg = dlg;
-	    }
-	 
+	
+		public FeedbackAsyncTask(AlertDialog.Builder dlg) {
+			super();
+			_dlg = dlg;
+		}
+	
 		@Override
 		protected Boolean doInBackground(ImageRecognitionFeedbackRequestParam... params) {
 			ImageRecognitionFeedbackRequestParam requestParam = params[0];
@@ -55,34 +55,34 @@ public class FeedbackActivity extends Activity implements OnClickListener  {
 				exceptionMessage = "ErrorCode: " + ex.getErrorCode() + "\nMessage: " + ex.getMessage();
 			}
 			return Boolean.TRUE;
-	    }
+		}
 		
 
 		@Override
 		protected void onCancelled() {
 		}
 		
-	    @Override
-	    protected void onPostExecute(Boolean result) {
+		@Override
+		protected void onPostExecute(Boolean result) {
 			
-	    	if(exceptionMessage != null){
-	    		if(isSdkException){
-	    			_dlg.setTitle("SdkException 発生");
-	    		}else{
-	    			_dlg.setTitle("ServerException 発生");
-	    		}
+			if(exceptionMessage != null){
+				if(isSdkException){
+					_dlg.setTitle("SdkException 発生");
+				}else{
+					_dlg.setTitle("ServerException 発生");
+				}
 				_dlg.setMessage(exceptionMessage + " ");
 				_dlg.show();
-	    	}else{
-		    	// 結果表示
+			}else{
+				// 結果表示
 				_dlg.setTitle("処理結果");
 				_resultText.setText("正常に終了しました。");
 
 				// ソフトキーボードを非表示にする
-	            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-	            imm.hideSoftInputFromWindow(_resultText.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-	    	}
-	    }
+				InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+				imm.hideSoftInputFromWindow(_resultText.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+			}
+		}
 	}
 
 	@Override
@@ -103,15 +103,14 @@ public class FeedbackActivity extends Activity implements OnClickListener  {
 		editText.setText(recognitionId);
 	}
 
-    @Override
-    public void onPause(){
-    	super.onPause();
-    	if(task != null){
-    		task.cancel(true);
-    	}
-    }
-    
-   
+	@Override
+	public void onPause() {
+		super.onPause();
+		if (task != null) {
+			task.cancel(true);
+		}
+	}
+
 	// インターフェース実装
 	public void onClick(View v) {
 		switch (v.getId()) {
