@@ -1,0 +1,6 @@
+jp.ne.docomo.smt.dev.common.exception
+jp.ne.docomo.smt.dev.common.http
+jp.ne.docomo.smt.dev.imagerecognition
+jp.ne.docomo.smt.dev.imagerecognition.constants
+jp.ne.docomo.smt.dev.imagerecognition.data
+jp.ne.docomo.smt.dev.imagerecognition.param
