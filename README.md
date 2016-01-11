@@ -1,0 +1,2 @@
+# ImageRecognitionSample
+画像認証サンプルアプリです
